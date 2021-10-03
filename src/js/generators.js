@@ -7,10 +7,16 @@
  */
 export function* characterGenerator(allowedTypes, maxLevel) {
   // TODO: write logic here
-  return allowedTypes[0];
+  for (let i of allowedTypes) {
+    yield i;
+  }
 }
 
-export function generateTeam(allowedTypes, maxLevel, characterCount) {
+export function* generateTeam(allowedTypes, maxLevel, characterCount) {
   // TODO: write logic here
-  return allowedTypes[0];
+  for (let i = 0; i < characterCount; i++) {
+    let i = yield* characterGenerator(allowedTypes, maxLevel);
+    i.level = maxLevel;
+    return i;
+  }
 }
