@@ -1,11 +1,14 @@
+import generateTeam from './generators';
+
 export default class Team {
-    constructor(allowTypes, maxLevel, characterCount) {
-    this.allownTypes = allowTypes;
-    this.maxlevel = maxLevel;
-    this.characterCount = characterCount;
-    }
+//   constructor(allowTypes) {
+//     if (allowTypes = new Character) {
+//         throw new Error('Not allowed type!');
+//     }
+//     this.allownTypes = allowTypes;
+//   }
     
-    genTeam () {
-        return generateTeam(this.allowedTypes, this.maxLevel, this.characterCount);
-    }
+  static generation(allowTypes, maxLevel, characterCount) {
+    return generateTeam(allowTypes, maxLevel, characterCount);
+  }    
 }

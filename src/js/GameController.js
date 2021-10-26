@@ -1,4 +1,6 @@
 import themes from './themes';
+import Team from './Team';
+import PositionedCharacter from './PositionedCharacter';
 
 export default class GameController {
   constructor(gamePlay, stateService) {
@@ -10,12 +12,21 @@ export default class GameController {
     // TODO: add event listeners to gamePlay events
     // TODO: load saved stated from stateService
     this.gamePlay.drawUi(themes.prairie);
-
+    positions = [];
+    let myTeam = Team.generation([new Bowman, new Swordsman], 1, 2);
+    for (let i of myTeam) {
+      positions.push[PositionedCharacter.getPosition(i)];
+    };
+    let enemyTeam = Team.generation([new Undead, new Vampire], 1, 2);
+    for (let i of enemyTeam) {
+      positions.push[PositionedCharacter.getPosition(i)];
+    };
+    
     //const callback1 = this.gamePlay.bindToDOM(this.gamePlay.container);
     //this.gamePlay.addNewGameListener(callback1);
-    console.log(`positions = ${this.gamePlay.positions}`);
-    //const callback = this.gamePlay.redrawPositions(this.gamePlay.positions);
-    //this.gamePlay.addNewGameListener(callback);
+    
+    const callback = this.gamePlay.redrawPositions(positions);
+    this.gamePlay.addNewGameListener(callback);
   }
 
   onCellClick(index) {
