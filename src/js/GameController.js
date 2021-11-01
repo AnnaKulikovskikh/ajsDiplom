@@ -1,5 +1,9 @@
 import themes from './themes';
 import Team from './Team';
+import Bowman from './Bowman';
+import Swordsman from './Swordsman';
+import Undead from './Undead';
+import Vampire from './Vampire';
 import PositionedCharacter from './PositionedCharacter';
 
 export default class GameController {
@@ -12,7 +16,7 @@ export default class GameController {
     // TODO: add event listeners to gamePlay events
     // TODO: load saved stated from stateService
     this.gamePlay.drawUi(themes.prairie);
-    positions = [];
+    let positions = [];
     let myTeam = Team.generation([new Bowman, new Swordsman], 1, 2);
     for (let i of myTeam) {
       positions.push[PositionedCharacter.getPosition(i)];
