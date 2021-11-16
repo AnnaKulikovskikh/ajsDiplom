@@ -7,7 +7,7 @@
  */
 export function characterGenerator(allowedTypes, maxLevel) {
   // TODO: write logic here
-  const random = allowedTypes[Math.floor(Math.random() * allowedTypes.length)];
+  const random = new allowedTypes[Math.floor(Math.random() * allowedTypes.length)];
   random.level = Math.round(0.5 + Math.random() * maxLevel);
   return random;
   //for (let i of allowedTypes) {

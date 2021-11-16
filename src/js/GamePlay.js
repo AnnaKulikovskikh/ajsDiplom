@@ -67,6 +67,7 @@ export default class GamePlay {
    * Draws positions (with chars) on boardEl
    *
    * @param positions array of PositionedCharacter objects
+   * positions = {position: number, character: character}
    */
   redrawPositions(positions) {
     for (const cell of this.cells) {
@@ -165,7 +166,8 @@ export default class GamePlay {
   onNewGameClick(event) {
     event.preventDefault();
     //this.newGameListeners.forEach(o => o.call(null));
-    this.newGameListeners.forEach(o => o.call(null));
+    console.log(this.newGameListeners);
+    //this.newGameListeners.forEach(o => o.call(null));
   }
 
   onSaveGameClick(event) {
