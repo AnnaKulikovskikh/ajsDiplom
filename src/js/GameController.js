@@ -24,6 +24,7 @@ export default class GameController {
   }
 
   startGame() {
+    console.log(this.postions);
     // let myTeam = Team.generation([Bowman, Swordsman], 1, 2);
     // for (let i of myTeam) {
     //   let access = [0,1,8,9,16,17,24,25,32,33,40,41,48,49,56,57];
